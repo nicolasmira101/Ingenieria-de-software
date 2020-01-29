@@ -1,0 +1,40 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>Actualizar peso</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content padding>
+      <form [formGroup]='registerForm'>
+    <ion-item>
+      Hola {{this.nombre}}, actualiza tu peso: 
+    </ion-item>
+
+    <ion-item>
+        <ion-label position="floating">
+            <ion-icon name="heart-empty"></ion-icon>
+         Peso (En kilogramos)
+        </ion-label>
+      <ion-input id="inputpeso" formControlName="peso" type="text" [(ngModel)]="p.pes"></ion-input>
+      </ion-item>
+      <div class="error-messages">
+          <ng-container *ngFor="let error of error_messages.peso">
+            <div class="error-message" *ngIf="registerForm.get('peso').hasError(error.type) && (registerForm.get('peso').dirty || registerForm.get('peso').touched)">
+              {{error.message}}
+            </div>
+          </ng-container>
+          </div>
+   <ion-button [disabled]="!registerForm.valid" (click)="actualizarPeso()">
+    Actualizar peso
+   </ion-button>
+   <p>
+     .....
+   </p>
+    <ion-item button color="danger" (click)="closePopo()">
+      <ion-icon name="close" slot="start">
+      </ion-icon>
+      Cerrar
+    </ion-item>
+      </form>
+  </ion-content>
+  

@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>¡Hola, Bienvenido!</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content fullscreen>
+  <ion-slides #slides (ionSlideWillChange)="onSlideChangeStart($event)" pager="false">
+
+    <ion-slide>
+      <ion-img src='https://firebasestorage.googleapis.com/v0/b/healthy-routine.appspot.com/o/tuto%2FObjetivo.png?alt=media&token=458d43e3-1151-42cb-bf67-3a99f27f9d21" class="slide-image'></ion-img>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-img src='https://firebasestorage.googleapis.com/v0/b/healthy-routine.appspot.com/o/tuto%2Fdietas.png?alt=media&token=41bc4cb0-e2f0-42a7-a04d-288dbc96bf04" class="slide-image'></ion-img>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-img src='https://firebasestorage.googleapis.com/v0/b/healthy-routine.appspot.com/o/tuto%2Fplan%20de%20ejercicios.png?alt=media&token=c4c7d949-0f36-49df-905d-35bcc64e2636" class="slide-image'></ion-img>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-img src='https://firebasestorage.googleapis.com/v0/b/healthy-routine.appspot.com/o/tuto%2Fpersonalizado.png?alt=media&token=078743f6-85aa-452b-8cfd-b6d03dd899bd" class="slide-image'></ion-img>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-img src='https://firebasestorage.googleapis.com/v0/b/healthy-routine.appspot.com/o/tuto%2Fprogreso.png?alt=media&token=0597044e-c75a-4b13-b572-28741f6f71cf" class="slide-image'></ion-img>
+    </ion-slide>
+
+  </ion-slides>
+  <div class="botones">
+    <ion-button color="dark" (click)="login()">Login</ion-button>
+    <ion-button color="light" (click)="registro()">Registro</ion-button>
+  </div> 
+</ion-content>

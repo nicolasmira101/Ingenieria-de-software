@@ -1,0 +1,38 @@
+ion-card{
+  display: flex;
+  flex-direction: column;
+  width: 90% !important;
+  margin: 0 !important;
+  text-align: center;
+  align-items: center;
+}
+ion-card-subtitle{
+  text-align:justify;
+}
+.fivestars{
+  width: 130px;
+  height: 130px;
+  text-align: center;
+  align-items: center;
+}
+.recomendada{
+  text-align: center;
+  align-items: center;
+  height: 80px !important;
+  width: 90px !important;
+align-items: center;
+}
+
+rating {
+  ion-icon {
+    color: gray;
+
+    &.filled {
+      color: #ffb400;
+    }
+  }
+}
+.card
+{
+     margin-bottom: 20px !important;
+}

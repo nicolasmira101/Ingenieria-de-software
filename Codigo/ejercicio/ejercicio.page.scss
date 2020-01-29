@@ -1,0 +1,17 @@
+
+.card
+{
+     margin-bottom: 20px !important;
+}
+
+ion-card{
+     display: flex;
+     flex-direction: column;
+     width: 90% !important;
+     margin: 0 !important;
+     text-align: center;
+     align-items: center;
+   }
+   ion-card-subtitle{
+     text-align:justify;
+   }

@@ -1,0 +1,59 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button color='primary' (click)="continuar()" [hidden]="!showSkip">Skip</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <ion-slides #slides (ionSlideWillChange)="onSlideChangeStart($event)" pager="false">
+
+      <ion-slide>
+          <img src="https://firebasestorage.googleapis.com/v0/b/healthy-routine.appspot.com/o/tuto%2Ftuto1.png?alt=media&token=7cf38135-ad87-456c-b0bb-3a21de9e7890" class="slide-image" />
+          <h2 class="slide-title">
+            Menú principal
+          </h2>
+          <p>
+            En este podrás encontrar los principales servicios ofrecidos por Healthy Routine.
+          </p>
+        </ion-slide>
+    
+        <ion-slide>
+          <img src="https://firebasestorage.googleapis.com/v0/b/healthy-routine.appspot.com/o/tuto%2Ftuto2.png?alt=media&token=ee40001b-e54b-4469-8941-4e27b2b93262" class="slide-image" />
+          <h2 class="slide-title">
+            Nutrición
+          </h2>
+          <p>
+            Aquí encontrarás dietas recomendadas por expertos, donde podrás seguir la que más se ajuste a tus
+            necesidades.
+          </p>
+        </ion-slide>
+    
+        <ion-slide>
+          <img src="https://firebasestorage.googleapis.com/v0/b/healthy-routine.appspot.com/o/tuto%2Ftuto3.png?alt=media&token=7c0cfeb1-43b4-47d9-b7a7-813e41e0a00d" class="slide-image" />
+          <h2 class="slide-title">
+            Ejercicio
+          </h2>
+          <p>
+            Encuentra aquí los planes de ejercicios que se adapten a tu estado físico y que te permitan alcanzar
+            el estado físico que quieres.
+          </p>
+        </ion-slide>
+    
+        <ion-slide>
+          <img src="https://firebasestorage.googleapis.com/v0/b/healthy-routine.appspot.com/o/tuto%2Ftuto4.png?alt=media&token=e0c833c8-c261-4dbd-b389-828663806de6" class="slide-image" />
+          <h2 class="slide-title">
+            Mi progreso
+          </h2>
+          <p>
+            Healthy Routine te permite llevar un seguimiento del trabajo realizado de forma cómoda y fácil.
+          </p>
+          <ion-button fill="clear" (click)="continuar()">
+            Continuar
+            <ion-icon slot="end" name="arrow-forward"></ion-icon>
+            </ion-button>
+        </ion-slide>
+    
+  </ion-slides>
+</ion-content>

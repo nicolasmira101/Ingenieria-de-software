@@ -1,0 +1,69 @@
+<ion-header>
+    <ion-toolbar>
+     <h3>Reporte general</h3>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="adminhome"></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content padding>
+
+  <ion-card>
+    <ion-card-header>
+
+    </ion-card-header>
+    Dietas y veces seleccionados por edad
+        <ion-card-content>
+            <canvas #barCanvas></canvas>
+        </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+      <ion-card-header>
+        Planes de ejercicio y veces seleccionados por edad
+      </ion-card-header>
+          <ion-card-content>
+              <canvas #barCanvasE></canvas>
+          </ion-card-content>
+    </ion-card>
+  
+
+  <ion-card>
+      <ion-card-header>
+        Selección de dietas por género
+      </ion-card-header>
+      <ion-card-content>
+        <canvas #doughnutCanvasG></canvas>
+      </ion-card-content>
+    </ion-card>
+
+  <ion-card>
+      <ion-card-header>
+        Selección de planes de ejercicio por género
+      </ion-card-header>
+      <ion-card-content>
+        <canvas #doughnutCanvas></canvas>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+        <ion-card-header>
+            Dietas y veces seleccionadas
+          </ion-card-header>
+        <ion-card-content>
+          <canvas #lineCanvas></canvas>
+        </ion-card-content>
+      </ion-card>
+
+
+      <ion-card>
+          <ion-card-header>
+              Planes de ejercicio y veces seleccionados
+            </ion-card-header>
+          <ion-card-content>
+            <canvas #lineCanvasE></canvas>
+          </ion-card-content>
+        </ion-card>
+
+</ion-content>

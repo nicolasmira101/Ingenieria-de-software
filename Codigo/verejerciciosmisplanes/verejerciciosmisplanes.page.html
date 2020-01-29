@@ -1,0 +1,41 @@
+<ion-header>
+    <ion-toolbar>
+     <h3>Ver ejercicios de mi plan</h3>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="misplanes"></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <ion-list>  
+     <ion-item *ngFor="let item of listaEjerciciosRef$ | async">
+        <ion-card>
+        <ion-card-header>
+            <ion-card-title>
+                <ion-icon name="fitness"></ion-icon>
+              Nombre del ejercicio: {{item.nombre}}</ion-card-title>
+            <ion-card-subtitle>
+                <ion-icon name="heart"></ion-icon>
+              Descripción del ejercicio: {{item.descripcion}}</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+        </ion-card-content>
+        <img src={{item.imagen}}/>
+        <p>   
+            <ion-icon name="flash"></ion-icon>
+          Series: {{item.series}}
+        </p>
+        <p>
+            <ion-icon name="heart"></ion-icon>
+             Repeticiones: {{item.repeticiones}}
+        </p>
+        <p>
+            <ion-icon name="alarm"></ion-icon>
+            Tiempo de descanso: {{item.tiempodescanso}} 
+       </p>
+      </ion-card>
+     
+     </ion-item>
+   </ion-list>  
+  </ion-content>

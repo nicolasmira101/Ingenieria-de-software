@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Tu IMC</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    Hola {{this.nombre}}, tu IMC es: {{this.imc}}
+  </ion-item>
+  <ion-item>
+    <ion-card>
+        Recomendación: {{this.texto}}
+    </ion-card>
+  </ion-item>
+  <ion-item button color="danger" (click)="closePopo()">
+    <ion-icon name="close" slot="start">
+    </ion-icon>
+    Cerrar
+  </ion-item>
+</ion-content>

@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar>
+   <h3>Crear ejercicio</h3>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="ejercicioadmin"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+      <ion-item>
+        <ion-label position="floating">
+           <ion-icon name="fitness"></ion-icon>
+            Nombre del ejercicio
+        </ion-label>
+        <ion-input id="inputnombreejercicio" type="text" [(ngModel)]="ejercicio.nombre"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label position="floating">
+             <ion-icon name="mail"></ion-icon>
+              Descripción
+          </ion-label>
+          <ion-input id="inputdescripcionejercicio" type="text" [(ngModel)]="ejercicio.descripcion"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="floating">
+              <ion-icon name="flash"></ion-icon>
+              Series
+            </ion-label>
+          <ion-input id="inputseries"  type="text" [(ngModel)]="ejercicio.series" ></ion-input>
+        </ion-item>
+        
+          <ion-item>
+            <ion-label position="floating">
+              <ion-icon name="heart"></ion-icon>
+              Repeticiones
+            </ion-label>
+          <ion-input id="inputrepeticiones"  type="text" [(ngModel)]="ejercicio.repeticiones" ></ion-input>
+        </ion-item>
+        
+        <ion-item>
+          <ion-label position="floating">
+            <ion-icon name="clock"></ion-icon>
+           Tiempo descanso (En minutos)
+          </ion-label>
+        <ion-input id="inputtiempodescanso"  type="text" [(ngModel)]="ejercicio.tiempodescanso" ></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="floating">
+               <ion-icon name="link"></ion-icon>
+               Link imagen
+            </ion-label>
+            <ion-input id="inputimagenejercicio" type="text" [(ngModel)]="ejercicio.imagen"></ion-input>
+          </ion-item>
+  </ion-list>
+
+  <div class="botones">
+    <ion-button color="dark" (click)="agregarEjercicio(ejercicio)">
+        <ion-icon name="add-circle-outline"></ion-icon>
+      Agregar ejercicio</ion-button>
+   
+  </div>
+
+  
+</ion-content>

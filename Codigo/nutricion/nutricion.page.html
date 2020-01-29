@@ -1,0 +1,88 @@
+<ion-header>
+    <ion-toolbar>
+     <h3>Nutrición</h3>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="userhome"></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content padding>
+  <ion-slides #slides (ionSlideWillChange)="onSlideChangeStart($event)" pager="false">
+   <ion-slide>
+   <ion-list> 
+      <h1>Aquí podrás encontrar todas las dietas disponibles.</h1>
+
+     <ion-item *ngFor="let item of items | async">
+      <div class="card">
+        <ion-grid style="height: 100%">
+          <ion-row justify-content-center align-items-center style="height: 100%">
+            <ion-card (swipe)="elementoSeleccionado(item,item.key)" (click)="elementoSeleccionado(item,item.key)">
+            <ion-card-header>
+            
+              <ion-card-title>Nombre de la dieta: {{item.nombre}}</ion-card-title>
+             
+            </ion-card-header>
+                <img src="https://firebasestorage.googleapis.com/v0/b/javesaludprueba.appspot.com/o/recomendada.jpg?alt=media&token=dbea22ac-1561-425a-b9e3-cbe724d4ec55">
+            <ion-card-content>
+                <p>
+                    <ion-icon name="heart"></ion-icon>
+                  Objetivo (En días): {{item.objetivo}}</p>
+                  <p>
+                    <ion-icon name="clock"></ion-icon>
+                  Calorías totales: {{item.calorias}}</p>
+                <p>
+                    <ion-icon name="clock"></ion-icon>
+                  Duración (En días): {{item.duracion}}</p>
+                <img src={{item.imagen}}/>
+            </ion-card-content>
+                <img src="https://firebasestorage.googleapis.com/v0/b/javesaludprueba.appspot.com/o/5estrellas.png?alt=media&token=af5e7116-6ad9-490a-aee2-841dcd358f92">
+          </ion-card>
+        </ion-row>
+      </ion-grid>
+    </div>
+     </ion-item>
+    <p>
+        <ion-icon name="fastforward"></ion-icon>
+        Desliza para ver tus dietas recomendadas   
+    </p>
+   </ion-list>
+  </ion-slide>
+  <ion-slide>
+      <ion-list> 
+          <h1>Aquí podrás encontrar todas las dietas recomendadas para ti.</h1>
+         <ion-item *ngFor="let item of recomendaciones ">
+          <div class="card">
+            <ion-grid style="height: 100%">
+              <ion-row justify-content-center align-items-center style="height: 100%">
+                <ion-card (swipe)="elementoSeleccionado(item,item.key)" (click)="elementoSeleccionado(item,item.key)">
+                <ion-card-header>
+                
+                  <ion-card-title>Nombre de la dieta: {{item.nombre}}</ion-card-title>
+                 
+                </ion-card-header>
+                    <img src="https://firebasestorage.googleapis.com/v0/b/javesaludprueba.appspot.com/o/recomendada.jpg?alt=media&token=dbea22ac-1561-425a-b9e3-cbe724d4ec55">
+                <ion-card-content>
+                    <p>
+                        <ion-icon name="heart"></ion-icon>
+                      Objetivo (En días): {{item.objetivo}}</p>
+                    <p>
+                        <ion-icon name="clock"></ion-icon>
+                      Duración (En días): {{item.duracion}}</p>
+                    <img src={{item.imagen}}/>
+                </ion-card-content>
+                    <img src="https://firebasestorage.googleapis.com/v0/b/javesaludprueba.appspot.com/o/5estrellas.png?alt=media&token=af5e7116-6ad9-490a-aee2-841dcd358f92">
+              </ion-card>
+            </ion-row>
+          </ion-grid>
+        </div>
+         </ion-item>
+         <p>
+            <ion-icon name="rewind"></ion-icon>
+            Desliza para ver todas las dietas
+        </p>
+       </ion-list>
+
+  </ion-slide>
+</ion-slides>
+</ion-content>

@@ -1,0 +1,274 @@
+<ion-header>
+    <ion-toolbar>
+     <h3>Crear dieta</h3>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="nutricionadmin"></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content padding>
+  <ion-list>
+      <ion-item>
+        <ion-label position="floating">
+          <ion-icon name="arrow-round-forward"></ion-icon>          
+            Nombre de la dieta
+        </ion-label>
+        <ion-input id="inputnombre" type="text" [(ngModel)]="dieta.nombre"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label position="floating">
+            <ion-icon name="arrow-round-forward"></ion-icon>          
+             Descripción de la dieta
+          </ion-label>
+          <ion-input id="inputdescripcion" type="text" [(ngModel)]="dieta.descripcion"></ion-input>
+        </ion-item>
+
+      <ion-item>
+          <ion-label>Meta</ion-label>
+          <ion-select placeholder="Selecciona una opción" id="meta">
+              <ion-select-option value="Perder peso">Perder peso</ion-select-option>
+            <ion-select-option value="Mantener forma">Mantener forma</ion-select-option>
+            <ion-select-option value="Ganar masa muscular">Ganar masa muscular</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+    <ion-item>
+        <ion-label position="floating">
+          <ion-icon name="pulse"></ion-icon>
+          Duración de la dieta (En días)
+        </ion-label>
+      <ion-input id="inputduracion"  type="text" [(ngModel)]="dieta.duracion" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">
+        <ion-icon name="clock"></ion-icon>
+       Calorías de la dieta
+      </ion-label>
+    <ion-input id="inputcalorias"  type="text" [(ngModel)]="dieta.calorias" ></ion-input>
+  </ion-item>
+
+    <ion-item>
+        <ion-label position="floating">
+          <ion-icon name="link"></ion-icon>
+          Link imagen
+        </ion-label>
+      <ion-input id="inputimagen"  type="text" [(ngModel)]="dieta.imagen" ></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <h1>PLATOS</h1>
+
+  <ion-list> 
+      <div *ngFor="let item of items" class=category-block>
+        <ion-row no-padding class="category-banner">
+          <ion-col (click)="item.expanded = !item.expanded" aling-self center>
+              {{ item.nombre }}
+          </ion-col>
+        </ion-row>
+          <div *ngIf="item.expanded && item.nombre=='Almuerzo'">
+                 
+              <ion-list> 
+                  <div *ngFor="let ite of almuerzo;let i=index;" class=category-blockk>
+            
+                    <ion-row no-padding class="category-bannerr">
+                      <ion-col text-left button tappable (click)="ite.expanded = !ite.expanded" aling-self center>
+                          Calorías: {{ ite.calorias }}
+                      </ion-col>
+                    </ion-row>
+            
+                <div *ngIf="ite.expanded">
+                 <ion-item >
+                    <ion-card (click)="elementoSeleccionado(ite,ite.key)">
+                    <ion-card-header>
+                      <ion-card-title>Nombre del plato: {{ite.nombre}}</ion-card-title>
+                      <ion-card-subtitle>Descripción del plato: {{ite.descripcion}}</ion-card-subtitle>
+                    </ion-card-header>
+                    <ion-card-content>
+                    </ion-card-content>
+                    <img src={{ite.imagen}}/>
+                    <p>
+                      <ion-icon name="clock"></ion-icon>
+                      Tiempo de preparación {{ite.duracion}}
+                    </p>
+                    <p>
+                      <ion-icon name="heart"></ion-icon>
+                      Calorias {{ite.calorias}}
+                    </p>
+                      <h2>
+                        Ingredientes
+                      </h2>
+                      <div *ngFor="let obj of ite.ingredientes">
+                        <td>- {{obj}}</td>
+                      </div>
+                      <h2>
+                        Preparación
+                      </h2>
+                      <div *ngFor="let obj of ite.pasos;let i=index">
+                        <td> {{i+1}}. {{obj}}</td>
+                    </div>
+                  </ion-card>
+                 </ion-item>
+                </div>
+                </div> 
+               </ion-list>
+
+          </div>
+          <div *ngIf="item.expanded && item.nombre=='Desayuno'">
+                 
+              <ion-list> 
+                  <div *ngFor="let ite of desayuno;let i=index" class=category-blockk>
+            
+                    <ion-row no-padding class="category-bannerr">
+                      <ion-col text-left button tappable (click)="ite.expanded = !ite.expanded" aling-self center>
+                          Calorías: {{ ite.calorias }}
+                      </ion-col>
+                    </ion-row>
+            
+                <div *ngIf="ite.expanded">
+                 <ion-item >
+                    <ion-card (click)="elementoSeleccionado(ite,ite.key)">
+                    <ion-card-header>
+                      <ion-card-title>Nombre del plato: {{ite.nombre}}</ion-card-title>
+                      <ion-card-subtitle>Descripción del plato: {{ite.descripcion}}</ion-card-subtitle>
+                    </ion-card-header>
+                    <ion-card-content>
+                    </ion-card-content>
+                    <img src={{ite.imagen}}/>
+                    <p>
+                      <ion-icon name="clock"></ion-icon>
+                      Tiempo de preparación {{ite.duracion}}
+                    </p>
+                    <p>
+                      <ion-icon name="heart"></ion-icon>
+                      Calorias {{ite.calorias}}
+                    </p>
+                      <h2>
+                        Ingredientes
+                      </h2>
+                      <div *ngFor="let obj of ite.ingredientes">
+                        <td>- {{obj}}</td>
+                      </div>
+                      <h2>
+                        Preparación
+                      </h2>
+                      <div *ngFor="let obj of ite.pasos;let i=index">
+                        <td> {{i+1}}. {{obj}}</td>
+                    </div>
+                  </ion-card>
+                 </ion-item>
+                </div>
+                </div> 
+               </ion-list>
+
+          </div>
+          <div *ngIf="item.expanded && item.nombre=='Comida'">
+                 
+            <ion-list> 
+                <div *ngFor="let ite of comida;let i=index" class=category-blockk>
+          
+                  <ion-row no-padding class="category-bannerr">
+                    <ion-col text-left button tappable (click)="ite.expanded = !ite.expanded" aling-self center>
+                        Calorías: {{ ite.calorias }}
+                    </ion-col>
+                  </ion-row>
+          
+              <div *ngIf="ite.expanded">
+               <ion-item (click)="elementoSeleccionado(ite,ite.key)">
+                  <ion-card>
+                  <ion-card-header>
+                    <ion-card-title>Nombre del plato: {{ite.nombre}}</ion-card-title>
+                    <ion-card-subtitle>Descripción del plato: {{ite.descripcion}}</ion-card-subtitle>
+                  </ion-card-header>
+                  <ion-card-content>
+                  </ion-card-content>
+                  <img src={{ite.imagen}}/>
+                  <p>
+                    <ion-icon name="clock"></ion-icon>
+                    Tiempo de preparación {{ite.duracion}}
+                  </p>
+                  <p>
+                    <ion-icon name="heart"></ion-icon>
+                    Calorias {{ite.calorias}}
+                  </p>
+                    <h2>
+                      Ingredientes
+                    </h2>
+                    <div *ngFor="let obj of ite.ingredientes">
+                      <td>- {{obj}}</td>
+                    </div>
+                    <h2>
+                      Preparación
+                    </h2>
+                    <div *ngFor="let obj of ite.pasos;let i=index">
+                      <td> {{i+1}}. {{obj}}</td>
+                  </div>
+                </ion-card>
+               </ion-item>
+              </div>
+              </div> 
+             </ion-list>
+
+        </div>
+        <div *ngIf="item.expanded && item.nombre=='Merienda'">
+                 
+          <ion-list> 
+              <div *ngFor="let ite of merienda;let i=index" class=category-blockk>
+        
+                <ion-row no-padding class="category-bannerr">
+                  <ion-col text-left button tappable (click)="ite.expanded = !ite.expanded" aling-self center>
+                      Calorías: {{ ite.calorias }}
+                  </ion-col>
+                </ion-row>
+        
+            <div *ngIf="ite.expanded">
+             <ion-item >
+                <ion-card (click)="elementoSeleccionado(ite,ite.key)">
+                <ion-card-header>
+                  <ion-card-title>Nombre del plato: {{ite.nombre}}</ion-card-title>
+                  <ion-card-subtitle>Descripción del plato: {{ite.descripcion}}</ion-card-subtitle>
+                </ion-card-header>
+                <ion-card-content>
+                </ion-card-content>
+                <img src={{ite.imagen}}/>
+                <p>
+                  <ion-icon name="clock"></ion-icon>
+                  Tiempo de preparación {{ite.duracion}}
+                </p>
+                <p>
+                  <ion-icon name="heart"></ion-icon>
+                  Calorias {{ite.calorias}}
+                </p>
+                  <h2>
+                    Ingredientes
+                  </h2>
+                  <div *ngFor="let obj of ite.ingredientes">
+                    <td>- {{obj}}</td>
+                  </div>
+                  <h2>
+                    Preparación
+                  </h2>
+                  <div *ngFor="let obj of ite.pasos;let i=index">
+                    <td> {{i+1}}. {{obj}}</td>
+                </div>
+              </ion-card>
+             </ion-item>
+            </div>
+            </div> 
+           </ion-list>
+
+      </div>
+      </div> 
+ </ion-list>
+
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button (click)="nuevaDieta(dieta)">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
+  <ion-button color="light" (click)="volver()">Atrás</ion-button>
+</ion-content>

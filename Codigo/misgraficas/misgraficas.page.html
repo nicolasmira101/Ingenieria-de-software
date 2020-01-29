@@ -1,0 +1,42 @@
+<ion-header>
+    <ion-toolbar>
+     <h3>Mi progreso</h3>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="userhome"></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+
+<ion-content padding>
+
+    <ion-card>
+      <ion-card-header>
+        Este es el progreso de tu peso desde tu registro
+      </ion-card-header>
+          <ion-card-content>
+              <canvas #barCanvas></canvas>
+          </ion-card-content>
+    </ion-card>
+  
+  
+    <ion-card>
+        <ion-card-header>
+          Calorías consumidas por dieta
+        </ion-card-header>
+        <ion-card-content>
+          <canvas #doughnutCanvas></canvas>
+        </ion-card-content>
+      </ion-card>
+  
+      <ion-card>
+          <ion-card-header>
+            Este es el progreso de tu peso desde tu registro
+          </ion-card-header>
+          <ion-card-content>
+            <canvas #lineCanvas></canvas>
+          </ion-card-content>
+        </ion-card>
+  
+  </ion-content>
+  

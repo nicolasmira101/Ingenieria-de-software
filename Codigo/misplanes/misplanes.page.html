@@ -1,0 +1,43 @@
+<ion-header>
+    <ion-toolbar>
+     <h3>Mis planes</h3>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="userhome"></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content padding>
+    <h1>Bienvenido(a) a tus planes, aquí podrás encontrar los planes de ejercicio que has seleccionado</h1>
+  
+    <ion-list>  
+        <ion-item *ngFor="let item of listaPlanesRef$ | async">
+           <div class="card">
+               <ion-grid style="height: 100%">
+                 <ion-row justify-content-center align-items-center style="height: 100%">
+           <ion-card (click)="elementoSeleccionado(item,item.key)">
+           <ion-card-header>
+   
+             <ion-card-title>
+                 <ion-icon name="body"></ion-icon>
+               Nombre del plan: {{item.nombre}}</ion-card-title>
+             <ion-card-subtitle>
+                 <ion-icon name="fitness"></ion-icon>
+               Descripción del plan: {{item.descripcion}}</ion-card-subtitle>
+             <ion-card-subtitle>
+                 <ion-icon name="heart"></ion-icon>
+               Objetivo del plan: {{item.objetivo}}</ion-card-subtitle>
+             
+   
+           </ion-card-header>
+           <ion-card-content>
+           </ion-card-content>
+           <img src={{item.imagen}}/>
+         </ion-card>
+       </ion-row>
+     </ion-grid>
+   </div>
+        </ion-item>
+      </ion-list>
+  </ion-content>
+  
